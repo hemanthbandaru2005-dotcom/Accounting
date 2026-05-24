@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance Management System</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Finance Management System</h1>
+
+    <!-- Dashboard -->
+    <div class="summary">
+
+      <div class="summary-box">
+        <h3>Total Purchase Value</h3>
+        <p id="purchaseTotal">0</p>
+      </div>
+
+      <div class="summary-box">
+        <h3>Total Current Value</h3>
+        <p id="currentTotal">0</p>
+      </div>
+
+      <div class="summary-box">
+        <h3>Total Depreciation</h3>
+        <p id="depreciation">0</p>
+      </div>
+
+    </div>
+
+    <!-- Form -->
+    <div class="card">
+
+      <h2>Add Fixed Asset</h2>
+
+      <div class="form-group">
+        <label>Asset Name</label>
+        <input type="text" id="assetName">
+      </div>
+
+      <div class="form-group">
+        <label>Asset Type</label>
+        <input type="text" id="assetType">
+      </div>
+
+      <div class="form-group">
+        <label>Purchase Value</label>
+        <input type="number" id="purchaseValue">
+      </div>
+
+      <div class="form-group">
+        <label>Purchase Date</label>
+        <input type="date" id="purchaseDate">
+      </div>
+
+      <div class="form-group">
+        <label>Current Value</label>
+        <input type="number" id="currentValue">
+      </div>
+
+      <div class="form-group">
+        <label>Current Value Date</label>
+        <input type="date" id="currentDate">
+      </div>
+
+      <div class="form-group">
+        <label>Description</label>
+        <input type="text" id="description">
+      </div>
+
+      <button onclick="addAsset()">Add Asset</button>
+
+      <!-- Table -->
+      <table>
+
+        <thead>
+          <tr>
+            <th>Asset Name</th>
+            <th>Type</th>
+            <th>Purchase Value</th>
+            <th>Purchase Date</th>
+            <th>Current Value</th>
+            <th>Current Date</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+
+        <tbody id="assetTable">
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
