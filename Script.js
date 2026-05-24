@@ -1,44 +1,35 @@
-let totalPurchase = 0;
-let totalCurrent = 0;
-
 function addAsset(){
 
-  const assetName =
+  let assetName =
     document.getElementById("assetName").value;
 
-  const assetType =
+  let assetType =
     document.getElementById("assetType").value;
 
-  const purchaseValue =
-    Number(document.getElementById("purchaseValue").value);
+  let purchaseValue =
+    document.getElementById("purchaseValue").value;
 
-  const purchaseDate =
+  let purchaseDate =
     document.getElementById("purchaseDate").value;
 
-  const currentValue =
-    Number(document.getElementById("currentValue").value);
+  let currentValue =
+    document.getElementById("currentValue").value;
 
-  const currentDate =
+  let currentDate =
     document.getElementById("currentDate").value;
 
-  const description =
+  let description =
     document.getElementById("description").value;
 
-  // Validation
-  if(
-    assetName === "" ||
-    purchaseValue === 0 ||
-    currentValue === 0
-  ){
-    alert("Please fill all required fields");
+  if(assetName == ""){
+    alert("Enter Asset Name");
     return;
   }
 
-  // Insert Row
-  const table =
+  let table =
     document.getElementById("assetTable");
 
-  const row = table.insertRow();
+  let row = table.insertRow();
 
   row.innerHTML = `
     <td>${assetName}</td>
@@ -50,24 +41,7 @@ function addAsset(){
     <td>${description}</td>
   `;
 
-  // Totals
-  totalPurchase += purchaseValue;
-  totalCurrent += currentValue;
-
-  document.getElementById("purchaseTotal").innerText =
-    totalPurchase;
-
-  document.getElementById("currentTotal").innerText =
-    totalCurrent;
-
-  document.getElementById("depreciation").innerText =
-    totalPurchase - totalCurrent;
-
-  clearFields();
-}
-
-function clearFields(){
-
+  // Clear Fields
   document.getElementById("assetName").value = "";
   document.getElementById("assetType").value = "";
   document.getElementById("purchaseValue").value = "";
